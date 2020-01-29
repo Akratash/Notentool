@@ -35,14 +35,26 @@ public class App {
 		System.out.print("[Geben Sie die anzahl Noten ein] > ");
 		notenAnzahl = scanner.nextInt();
 		while(zähler<notenAnzahl) {
-			System.out.print("\n[Noteneingabe] > ");
+			System.out.print("\n[Noteneingabe (1-6)] > ");
 			double mark = scanner.nextDouble();
-			System.out.print("\n[Gewichtung 1-4] > ");
-			int gew = scanner.nextInt();
+			if(mark >= NotenRechner.MIN_N_GW && mark <= NotenRechner.MAX_N) {
+				note.setNote(mark);
+			}else {
+				System.out.println("[Falsche Eingabe - Programm Ende]");
+				System.exit(0);
+			}
 			
-			totGewichtung += gew;
-			note.setNote(mark);
-			note.setGewichtung(gew);
+			
+			
+			System.out.print("\n[Gewichtung (1-4)] > ");
+			int gew = scanner.nextInt();
+			if(gew >= NotenRechner.MIN_N_GW && gew <= NotenRechner.MAX_GW) {
+				note.setGewichtung(gew);
+				totGewichtung += gew;
+			}else {
+				System.out.println("[Falsche Eingabe - Programm Ende]");
+				System.exit(0);
+			}
 			
 			
 			mark = nRechner.berechne(note);

@@ -4,7 +4,7 @@ import ch.akratash.notentool.model.Noten;
 
 public class NotenRechner {
 	
-	public final static int MAX_GW = 3;
+	public final static int MAX_GW = 4;
 	public final static int MAX_N = 6;
 	public final static int MIN_N_GW = 1;
 	
