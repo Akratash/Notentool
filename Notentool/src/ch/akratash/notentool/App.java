@@ -11,7 +11,6 @@ public class App {
 	private double[] ergebnisse = new double[10];
 	private int totGewichtung = 0;
 	private double notenSchnitt = 0;
-	public int notenAnzahl;
 
 	private int index = -1;
 
@@ -33,7 +32,7 @@ public class App {
 		NotenRechner nRechner = new NotenRechner();
 		note = new Noten();
 		System.out.print("[Geben Sie die anzahl Noten ein] > ");
-		notenAnzahl = scanner.nextInt();
+		int notenAnzahl = scanner.nextInt();
 		while(zähler<notenAnzahl) {
 			System.out.print("\n[Noteneingabe (1-6)] > ");
 			double mark = scanner.nextDouble();
