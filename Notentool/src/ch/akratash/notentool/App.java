@@ -66,6 +66,6 @@ public class App {
 			notenSchnitt += ergebnisse[i];
 		}
 		notenSchnitt = notenSchnitt/totGewichtung;
-		System.out.print("\n[Der Notenschnitt beträgt] > ["+notenSchnitt+"]");
+		System.out.print("\n[Der Notenschnitt beträgt] > ["+notenSchnitt+"]\n");
 	}
 }
