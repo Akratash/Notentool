@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import ch.akratash.notentool.controller.NotenRechner;
 import ch.akratash.notentool.model.Noten;
-
 public class App {
 	
 	private Scanner scanner = new Scanner(System.in);
@@ -12,6 +11,7 @@ public class App {
 	private double[] ergebnisse = new double[10];
 	private int totGewichtung = 0;
 	private double notenSchnitt = 0;
+	public int notenAnzahl;
 
 	private int index = -1;
 
@@ -32,12 +32,12 @@ public class App {
 		int zähler = 0;
 		NotenRechner nRechner = new NotenRechner();
 		note = new Noten();
-		System.out.println("[Geben Sie die anzahl Noten ein] > ");
-		int notenAnzahl = scanner.nextInt();
+		System.out.print("[Geben Sie die anzahl Noten ein] > ");
+		notenAnzahl = scanner.nextInt();
 		while(zähler<notenAnzahl) {
-			System.out.println("[Noteneingabe] > ");
+			System.out.print("\n[Noteneingabe] > ");
 			double mark = scanner.nextDouble();
-			System.out.println("[Gewichtung 1-4]");
+			System.out.print("\n[Gewichtung 1-4] > ");
 			int gew = scanner.nextInt();
 			
 			totGewichtung += gew;
@@ -58,6 +58,6 @@ public class App {
 			notenSchnitt += ergebnisse[i];
 		}
 		notenSchnitt = notenSchnitt/totGewichtung;
-		System.out.println(notenSchnitt);
+		System.out.print("\n[Der Notenschnitt beträgt] > ["+notenSchnitt+"]\n[Noten-Tool-Ende]");
 	}
 }
